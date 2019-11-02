@@ -26,10 +26,12 @@ class Csv2Keychain:
              #'-T', '/Applications/Safari.app',
               '-w', password
                   ]
+        
+        syscall.append('-A')
+        
         if update:
             syscall.append('-U')
-        if universal:
-            syscall.append('-A') else syscall.append('-T', '/Applications/Safari.app')
+            
         call(syscall)
 
     def __init__(self):
