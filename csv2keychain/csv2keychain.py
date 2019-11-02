@@ -10,7 +10,7 @@ import csv
 
 class Csv2Keychain:
 
-    def addkey(self, params, update):
+    def addkey(self, params, update, universal):
         name, url, username, password = params
         url = urlparse(url)
         domain = url.netloc
@@ -23,10 +23,13 @@ class Csv2Keychain:
               '-a', username,
               '-t', 'form',
               '-r', "{:<4}".format(url.scheme[0:4]),
-              '-T', '/Applications/Safari.app',
-              '-w', password]
+             #'-T', '/Applications/Safari.app',
+              '-w', password
+                  ]
         if update:
             syscall.append('-U')
+        if universal:
+            syscall.append('-A') else syscall.append('-T', '/Applications/Safari.app')
         call(syscall)
 
     def __init__(self):
