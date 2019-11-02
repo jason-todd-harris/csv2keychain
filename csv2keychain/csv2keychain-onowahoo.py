@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""csv2keychain.csv2keychain: primary module within the csv2keychain package."""
+"""csv2keychain-onowahoo.csv2keychain-onowahoo: primary module within the csv2keychain-onowahoo package."""
 
 from urllib.parse import urlparse
 from subprocess import call
